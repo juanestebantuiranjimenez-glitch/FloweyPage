@@ -1,9 +1,9 @@
 
 import {
-    buscarOfertaPorId,
-    crearOferta as guardarOferta,
-    actualizarOferta as modificarOferta,
-    listarOfertas as obtenerOfertas
+  buscarOfertaPorId,
+  crearOferta as guardarOferta,
+  actualizarOferta as modificarOferta,
+  listarOfertas as obtenerOfertas
 } from "./ofertasFloristeria.service.js";
 
 function esIdValido(id) {
