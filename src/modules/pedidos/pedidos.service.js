@@ -128,3 +128,18 @@ export async function crearPedido(clienteId, datos) {
     estado: "pendiente_asignacion"
   });
 }
+
+// Consultar los pedidos de un cliente
+export async function listarPedidosCliente(clienteId) {
+  return Pedido.find({ cliente: clienteId })
+    .populate("producto", "nombre precio categoria")
+    .sort({ createdAt: -1 });
+}
+
+// Consultar todos los pedidos (administrador)
+export async function listarTodosLosPedidos() {
+  return Pedido.find()
+    .populate("cliente", "nombre correo")
+    .populate("producto", "nombre precio categoria")
+    .sort({ createdAt: -1 });
+}
